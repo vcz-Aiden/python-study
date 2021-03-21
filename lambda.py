@@ -2,9 +2,6 @@
 
 import functools
 
-
-import csv
-
 if __name__ == "__main__" :
     #sorting example
     strings = ['bob', 'charles', 'alexander3', 'teddy']
@@ -28,4 +25,8 @@ if __name__ == "__main__" :
     print(nums)
 
 
+
+    #reduce example
+    a = list(range(1, 11))
+    print(functools.reduce(lambda x, y: x * y, a))
 
