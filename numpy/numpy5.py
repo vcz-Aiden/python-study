@@ -14,5 +14,11 @@ if __name__ == "__main__" :
     a = np.array([[1, 1], [2, 4]])
     b = np.array([25, 64])
 
+    print(a)
+    print(b)
+
+    a = np.array([[1, 1, 1], [4, 8, 3], [1, 2, 3]])
+    b = np.array([25, 64, 10])
+
     print(np.linalg.solve(a, b))     #행렬 방정식 해 구하기
     print(np.allclose(a @ np.linalg.solve(a, b), b))    #너무 작은 값 처리
