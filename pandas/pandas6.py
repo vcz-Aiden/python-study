@@ -10,7 +10,8 @@ def curTime_categorize(curTime) :
 
 if __name__ == "__main__" :
     data = pd.read_csv('./train.csv', sep=",", index_col=0)  #, usecols=['playbackTime'])
-    print(data)
+    data['curTime'] = data['curTime'].apply(curTime_categorize)
+    '''print(data)
 
     print(data.info())
     print(data.isna())
@@ -61,11 +62,15 @@ if __name__ == "__main__" :
     print(data)
 
     print(data.pivot('playbackTime', 'isDead', 'transform'))
-    print(pd.pivot_table(data, index='curTime', columns='isDead', aggfunc=np.mean))
+    print(pd.pivot_table(data, index='curTime', columns='isDead', aggfunc=np.mean))'''
 
     #stack and unstack
     stack_data = data.set_index(['curTime', 'playbackTime'])
 
     print(stack_data)
-    print(stack_data.unstack(level=1))
-    print(stack_data.unstack(level=1).stack(0))
+
+    stack_data.to_csv('test.csv', mode='w')
+    print(pd.read_csv('test.csv', index_col=['curTime', 'playbackTime']))
+
+    #print(stack_data.unstack(level=1))
+    #print(stack_data.unstack(level=1).stack(0))

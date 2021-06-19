@@ -10,11 +10,13 @@ if __name__ == "__main__" :
     df3 = pd.DataFrame({'key2': np.arange(10), 'value2': np.random.rand(10)})
 
     print(df3)
+    
+    print(pd.concat([None, df3], ignore_index=True))
 
-    print(pd.concat([df1, df2], ignore_index=True))
-    print(pd.concat([df1, df2], axis=1))
+    #print(pd.concat([df1, df2], ignore_index=True))
+    #print(pd.concat([df1, df2], axis=1))
 
-    print(pd.concat([df1, df3]))
-    print(pd.concat([df1, df3], axis=1))
+    #print(pd.concat([df1, df3]))
+    #print(pd.concat([df1, df3], axis=1))
 
     #merge and join
