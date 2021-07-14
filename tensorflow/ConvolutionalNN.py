@@ -29,6 +29,8 @@ if __name__ == '__main__':
     x_train = x_train[..., np.newaxis]
     x_test = x_test[..., np.newaxis]
 
+    print(x_train[0].shape)
+
     train_ds = tf.data.Dataset.from_tensor_slices((x_train, y_train)).shuffle(10000).batch(32).prefetch(2048)
     test_ds = tf.data.Dataset.from_tensor_slices((x_test, y_test)).batch(32).prefetch(2048)
 
