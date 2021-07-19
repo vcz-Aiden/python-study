@@ -16,6 +16,8 @@ class MyModel(tf.keras.Model):
         self.dense5 = tf.keras.layers.Dense(10, activation='softmax')
 
     def __call__(self, x, training=None, mask=None):
+        print(x.shape)
+
         h = self.flatten(x)
         h = self.dense1(h)
         h = self.dense2(h)
