@@ -13,7 +13,7 @@ options.add_argument("lang=ko_KR")
 driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
 
 data_list = []
-driver.get("https://www.youtube.com/watch?v=0xBu251omcw")
+driver.get("https://www.youtube.com/watch?v=qZ2HqUuIjKc")
 
 body = driver.find_element_by_tag_name('body')
 last_page_height = driver.execute_script("return document.documentElement.scrollHeight")
@@ -59,7 +59,7 @@ for j in range(len(comments_list)):
     data_list.append(data)
 
 result_df = pd.DataFrame(data_list, columns=['comment','youtube_id','date','like_num'])
-result_df.to_excel('comment_youtube.xlsx', index=False)
+result_df.to_excel('comment_youtube3.xlsx', index=False)
 driver.close()
 
 
